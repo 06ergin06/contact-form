@@ -17,7 +17,7 @@ export default function Home() {
     <div className="center flex-col w-full text-[--grey900]">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white start w-6/12 py-4 rounded-xl px-10"
+        className="bg-white start w-6/12 py-16 rounded-xl px-10"
       >
         <label htmlFor="" className="text-3xl font-bold mb-8">
           Contact Us
@@ -75,7 +75,7 @@ export default function Home() {
           )}
         </div>
         <div className="start w-full mb-6">
-          <label htmlFor="">Query Type *</label>
+          <label className="mb-2" htmlFor="">Query Type *</label>
           <div className="center w-full gap-4">
             <div
               className={`flex justify-start items-center text-center input px-6 w-1/2 gap-4 active:bg-[--grey900]  ${
@@ -132,7 +132,7 @@ export default function Home() {
             </p>
           )}
         </div>
-        <div className="center items-start flex-col">
+        <div className="center items-start flex-col mb-10">
           <div className="center gap-2">
             <input
               type="checkbox"
@@ -155,7 +155,7 @@ export default function Home() {
           Submit
         </button>
         {isSubmitted && (
-          <div className="center absolute top-40 bg-[--green600]">
+          <div className="center absolute top-10 bg-[--green600] rounded-xl px-5 py-5">
             <p className="text-white">
               Message Sent! Thanks for completing the form. We'll be in touch
               soon!
