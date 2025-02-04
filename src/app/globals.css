@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 @layer components {
+  * {
+    @apply transition-all;
+  }
   .center {
     @apply flex justify-center items-center text-center;
   }
@@ -9,7 +12,14 @@
     @apply flex items-start justify-center flex-col;
   }
   .input {
-    @apply border border-[--grey500] rounded-md h-9 px-4;
+    @apply border border-[--grey500] hover:border-[--green600] focus:border-[--green600] active:border-[--green600] rounded-md py-2 px-4;
+  }
+  input,
+  textarea {
+    @apply focus:outline-none;
+  }
+  label {
+    @apply pb-2;
   }
 }
 :root {

@@ -14,7 +14,7 @@ export default function Home() {
   };
 
   return (
-    <div className="center flex-col w-full text-[--grey900] select-none">
+    <div className="center flex-col w-full text-[--grey900]">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="bg-white start w-6/12 py-4 rounded-xl px-10"
@@ -44,7 +44,7 @@ export default function Home() {
               {...register("lastName", { required: true })}
               aria-invalid={errors.lastName ? "true" : "false"}
               className={`input w-full ${
-                errors.firstName ? "border-[--red]" : "border-[--grey900]"
+                errors.lastName ? "border-[--red]" : "border-[--grey900]"
               }`}
             />
             {errors.lastName?.type === "required" && (
@@ -67,7 +67,7 @@ export default function Home() {
             })}
             aria-invalid={errors.email ? "true" : "false"}
             className={`input w-full ${
-              errors.firstName ? "border-[--red]" : "border-[--grey900]"
+              errors.email ? "border-[--red]" : "border-[--grey900]"
             }`}
           />
           {errors.email && (
@@ -78,9 +78,10 @@ export default function Home() {
           <label htmlFor="">Query Type *</label>
           <div className="center w-full gap-4">
             <div
-              className={`flex justify-start items-center text-center input px-6 w-1/2 gap-4 ${
-                errors.firstName ? "border-[--red]" : "border-[--grey900]"
-              }`}
+              className={`flex justify-start items-center text-center input px-6 w-1/2 gap-4 active:bg-[--grey900]  ${
+                errors.radio ? "border-[--red]" : "border-[--grey900]"
+              }
+              `}
             >
               <input
                 type="radio"
@@ -89,8 +90,9 @@ export default function Home() {
                   required: true,
                 })}
                 aria-invalid={errors.email ? "true" : "false"}
+                className="w-5 h-5"
               />
-              <label htmlFor="general">General Enquiry</label>
+              <p htmlFor="general">General Enquiry</p>
             </div>
             <div
               className={`flex justify-start items-center text-center input px-6 w-1/2 gap-4 ${
@@ -105,8 +107,9 @@ export default function Home() {
                     required: true,
                   })}
                   aria-invalid={errors.email ? "true" : "false"}
+                  className="w-5 h-5"
                 />
-                <label htmlFor="sup">Support Request</label>
+                <p htmlFor="sup">Support Request</p>
               </div>
             </div>
           </div>
@@ -120,7 +123,7 @@ export default function Home() {
             {...register("message", { required: true })}
             aria-invalid={errors.message ? "true" : "false"}
             className={`input h-20 w-full text-wrap p-4 ${
-              errors.firstName ? "border-[--red]" : "border-[--grey900]"
+              errors.message ? "border-[--red]" : "border-[--grey900]"
             }`}
           />
           {errors.message?.type === "required" && (
@@ -135,7 +138,7 @@ export default function Home() {
               type="checkbox"
               {...register("checkbox", { required: true })}
               aria-invalid={errors.checkbox ? "true" : "false"}
-              className=""
+              className="mb-2 bg-[--green600]"
             />
             <label htmlFor="">I consent to being contacted by the team *</label>
           </div>
