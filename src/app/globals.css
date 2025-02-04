@@ -9,7 +9,7 @@
     @apply flex items-start justify-center flex-col;
   }
   .input {
-    @apply border border-[--grey500] rounded-md h-9;
+    @apply border border-[--grey500] rounded-md h-9 px-4;
   }
 }
 :root {
