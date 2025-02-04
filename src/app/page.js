@@ -17,11 +17,12 @@ export default function Home() {
     <div className="center flex-col w-full">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white center flex-col w-6/12 py-4"
+        className="bg-white center flex-col w-6/12 py-4 rounded-xl"
       >
+        <label htmlFor="">Contact Us</label>
         <div className="center gap-4">
           <div className="center flex-col">
-            <label htmlFor="">First Name</label>
+            <label htmlFor="">First Name *</label>
             <input
               {...register("firstName", { required: true })}
               aria-invalid={errors.firstName ? "true" : "false"}
@@ -34,7 +35,7 @@ export default function Home() {
             )}
           </div>
           <div className="center flex-col">
-            <label htmlFor="">Last Name</label>
+            <label htmlFor="">Last Name *</label>
             <input
               {...register("lastName", { required: true })}
               aria-invalid={errors.lastName ? "true" : "false"}
@@ -48,7 +49,7 @@ export default function Home() {
           </div>
         </div>
         <div className="center flex-col">
-          <label htmlFor="">Email Address</label>
+          <label htmlFor="">Email Address *</label>
           <input
             type="text"
             {...register("email", {
@@ -66,7 +67,7 @@ export default function Home() {
           )}
         </div>
         <div className="center flex-col">
-          <label htmlFor="">Query Type</label>
+          <label htmlFor="">Query Type *</label>
           <div className="center ">
             <div>
               <input
@@ -98,7 +99,7 @@ export default function Home() {
           )}
         </div>
         <div className="center flex-col">
-          <label htmlFor="">Message</label>
+          <label htmlFor="">Message *</label>
           <input
             {...register("message", { required: true })}
             aria-invalid={errors.message ? "true" : "false"}
@@ -122,7 +123,7 @@ export default function Home() {
               To submit this form, please consent to being contacted
             </p>
           )}
-          <label htmlFor="">I consent to being contacted by the team</label>
+          <label htmlFor="">I consent to being contacted by the team *</label>
         </div>
         <button type="submit">Submit</button>
         {isSubmitted && (
