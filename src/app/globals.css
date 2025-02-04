@@ -5,8 +5,11 @@
   .center {
     @apply flex justify-center items-center text-center;
   }
+  .start {
+    @apply flex items-start justify-center flex-col;
+  }
   .input {
-    @apply border border-[--grey500];
+    @apply border border-[--grey500] rounded-md h-9;
   }
 }
 :root {
